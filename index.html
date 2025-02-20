@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Greeting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h2>🎤 AI Voice Greeting</h2>
+        <p>Enter your name to start:</p>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <button id="submitName">Submit</button>
+        <button id="startBtn" style="display: none;">Start AI Greeting</button>
+        <p id="greeting"></p>
+    </div>
+
+    <!-- Settings Box Below the Main Box -->
+    <div id="settings-box">
+        <h3>🎛️ Voice Settings</h3>
+        <label for="voiceSelect">🔊 Choose Voice:</label>
+        <select id="voiceSelect"></select>
+
+        <label for="speedRange">⚡ Speech Speed:</label>
+        <input type="range" id="speedRange" min="0.5" max="2" step="0.1" value="1">
+
+        <label for="pitchRange">🎵 Voice Pitch:</label>
+        <input type="range" id="pitchRange" min="0.5" max="2" step="0.1" value="1">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
