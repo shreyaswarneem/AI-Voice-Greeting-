@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Greeting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h2>🎤 AI Voice Greeting</h2>
+        <p>Enter your name to start:</p>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <button id="submitName">Submit</button>
+        <button id="startBtn" style="display: none;">Start AI Greeting</button>
+        <p id="greeting"></p>
+    </div>
+
+    <!-- Language Selection Box Below -->
+    <div id="settings-box">
+        <h3>🌎 Select Language</h3>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+        </select>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
