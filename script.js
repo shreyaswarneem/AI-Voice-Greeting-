@@ -46,12 +46,24 @@ function loadVoices() {
         option.textContent = `${voice.name} (${voice.lang})`;
         voiceSelect.appendChild(option);
     });
+
+    // Ensure a default voice is selected
+    if (voiceSelect.options.length > 0) {
+        voiceSelect.value = 0; // Select the first available voice
+    }
 }
 
 // **Fix: Ensure voices are loaded properly**
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = loadVoices;
 }
+
+// **Force voices to load on user interaction (mobile fix)**
+document.body.addEventListener("click", () => {
+    if (voices.length === 0) {
+        loadVoices();
+    }
+});
 
 // **Call `loadVoices()` when clicking the start button (ensures voices load)**
 startBtn.addEventListener("click", () => {
@@ -85,9 +97,13 @@ function speakTextAndShow(text, callback) {
     setTimeout(() => greetingElement.style.opacity = "1", 100); // Show gradually
 
     let speech = new SpeechSynthesisUtterance(text);
-    let selectedVoice = voices[voiceSelect.value]; // Get selected voice
+    
+    // Select the chosen voice
+    let selectedVoice = voices[voiceSelect.value]; 
     if (selectedVoice) {
         speech.voice = selectedVoice;
+    } else {
+        speech.voice = speechSynthesis.getVoices()[0]; // Fallback to default voice
     }
 
     speech.lang = "en-US";
