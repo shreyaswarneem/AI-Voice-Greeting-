@@ -3,7 +3,7 @@ const greetings = [
     "Hello {name}! Welcome to my JavaScript AI Project.",
     "Hope you're having an amazing day, {name}!",
     "This is a dynamic voice greeting powered by AI.",
-    "Enjoy the experience, {name}! 🎤",
+    "Enjoy the experience, {name}!",
     "You're doing great, {name}. Keep exploring AI!",
     "Welcome to the future, {name}. AI is awesome!",
     "Did you know? AI is changing the world, {name}!",
